@@ -2,11 +2,15 @@ package dev.mission.entite;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.mapping.List;
 
 @Entity
 @Table(name = "mission")
@@ -15,9 +19,14 @@ public class Mission {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String libelle;
+	
+	@Column(name="dateDebut")
 	private LocalDate dateDebut;
+	
 	private LocalDate dateFin;
 	private BigDecimal tauxJournalier;
+	
+	
 	/** Getter
 	 * @return the id
 	 */
